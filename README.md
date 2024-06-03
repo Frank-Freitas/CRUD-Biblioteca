@@ -1,4 +1,4 @@
-#CRUD-Biblioteca
+# CRUD-Biblioteca
 
 Projeto de 2° semestre da Faculdade de Análise e desenvolvimento de sistemas
 
@@ -6,6 +6,6 @@ Projeto de 2° semestre da Faculdade de Análise e desenvolvimento de sistemas
  - Feito em linghagem Java no padrão maven;
  - Feito no padrão de arquitetura MVC basico.
 
-#BANCO DE DADOS
+# BANCO DE DADOS
  - Uso de banco de dados local;
  - banco de dados H2-dataBase.
