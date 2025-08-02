@@ -1,4 +1,4 @@
-package com.biblioteca.biblioteca;
+package com.biblioteca.biblioteca.config;
 
 import java.sql.Statement;
 import java.sql.Connection;

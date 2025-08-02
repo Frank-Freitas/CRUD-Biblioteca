@@ -1,8 +1,11 @@
-package com.biblioteca.biblioteca;
+package com.biblioteca.biblioteca.model.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.biblioteca.biblioteca.config.DBConfig;
+import com.biblioteca.biblioteca.model.entity.Livro;
 
 public class LivroDAO implements IDAO<Livro> {
     @Override

@@ -1,7 +1,10 @@
-package com.biblioteca.biblioteca;
+package com.biblioteca.biblioteca.controller;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import com.biblioteca.biblioteca.model.dao.IDAO;
+import com.biblioteca.biblioteca.model.entity.Livro;
 
 public class LivroController {
     private final IDAO<Livro> livroDAO;

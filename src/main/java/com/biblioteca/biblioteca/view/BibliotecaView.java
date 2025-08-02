@@ -1,6 +1,9 @@
-package com.biblioteca.biblioteca;
+package com.biblioteca.biblioteca.view;
 import java.sql.SQLException;
 import java.util.Scanner;
+
+import com.biblioteca.biblioteca.controller.LivroController;
+import com.biblioteca.biblioteca.model.entity.Livro;
 
 public class BibliotecaView {
     private Scanner scanner = new Scanner(System.in);
