@@ -1,0 +1,7 @@
+# pastas do projeto
+/target/
+.vscode/
+.mvn/
+
+#Meus Arquivos
+atts.text
