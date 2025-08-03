@@ -1,4 +1,4 @@
-package com.biblioteca.biblioteca;
+package com.biblioteca.biblioteca.config;
 
 import java.sql.Statement;
 import java.sql.Connection;
@@ -13,6 +13,9 @@ public class DBConfig {
 
   private static final String PASSWORD = "";
 
+   private DBConfig (){
+   }
+   
   public static Connection getConnection() throws SQLException {
     return DriverManager.getConnection(URL, USER, PASSWORD);
   }

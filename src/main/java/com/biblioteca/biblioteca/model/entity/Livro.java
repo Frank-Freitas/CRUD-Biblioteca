@@ -1,4 +1,4 @@
-package com.biblioteca.biblioteca;
+package com.biblioteca.biblioteca.model.entity;
 
 public class Livro {
     private int id;

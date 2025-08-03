@@ -1,22 +1,17 @@
-package com.biblioteca.biblioteca;
+package com.biblioteca.biblioteca.model.dao;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import com.biblioteca.biblioteca.config.DBConfig;
+import com.biblioteca.biblioteca.model.entity.Livro;
+
 public class LivroDAO implements IDAO<Livro> {
-    private Connection conn;
-
-    public LivroDAO() throws SQLException {
-        this.conn = DBConfig.getConnection();
-    }
-
     @Override
     public void cadastrar(Livro livro){
         String sql = "INSERT INTO Livros (titulo, autor, emprestado) VALUES (?, ?, ?)";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = DBConfig.getConnection().prepareStatement(sql)) {
             pstmt.setString(1, livro.getTitulo());
             pstmt.setString(2, livro.getAutor());
             pstmt.setBoolean(3, livro.isEmprestado());
@@ -30,7 +25,7 @@ public class LivroDAO implements IDAO<Livro> {
     @Override
     public void devolver(Livro livro) {
         String sql = "UPDATE Livros SET emprestado = false WHERE id = ?";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = DBConfig.getConnection().prepareStatement(sql)) {
             pstmt.setInt(1, livro.getId());
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -42,7 +37,7 @@ public class LivroDAO implements IDAO<Livro> {
     @Override
     public Livro emprestar(int id) throws SQLException  {
         String sql = "UPDATE Livros SET emprestado = true WHERE id = ?";
-        PreparedStatement pstmt = conn.prepareStatement(sql);
+        PreparedStatement pstmt = DBConfig.getConnection().prepareStatement(sql);
         pstmt.setInt(1, id);
         pstmt.executeUpdate();
 
@@ -53,7 +48,7 @@ public class LivroDAO implements IDAO<Livro> {
     public List<Livro> listar()  {
         List<Livro> livros = new ArrayList<>();
         String sql = "SELECT * FROM Livros";
-        try (Statement stmt = conn.createStatement()) {
+        try (Statement stmt = DBConfig.getConnection().createStatement()) {
             try (ResultSet rs = stmt.executeQuery(sql)) {
                 while (rs.next()) {
                     int id = rs.getInt("id");
@@ -76,7 +71,7 @@ public class LivroDAO implements IDAO<Livro> {
     @Override
     public Livro buscar(int id) {
         String sql = "SELECT * FROM Livros WHERE id = ?";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (PreparedStatement pstmt = DBConfig.getConnection().prepareStatement(sql)) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
 

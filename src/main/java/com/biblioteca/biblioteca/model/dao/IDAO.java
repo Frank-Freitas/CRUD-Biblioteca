@@ -1,4 +1,4 @@
-package com.biblioteca.biblioteca;
+package com.biblioteca.biblioteca.model.dao;
 import java.sql.SQLException;
 import java.util.List;
 
