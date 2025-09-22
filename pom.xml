@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<!-- PARTE BASICA DO POM  -->
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.frankfreitas</groupId>
@@ -42,8 +41,7 @@
 			<version>3.49.5</version>
 		</dependency>
 	</dependencies>
-
-	<!-- CONFIGURAÇÕES DE CONSTRUÇÃO -->
+	
 	<build>
 		<plugins>
       <plugin>
@@ -62,10 +60,4 @@
       </plugin>
     </plugins>
 	</build>
-
-  <!--
-  	 NAS ABAIXO PODE HAVER MAIS COONFIGURAÇÕES COMO:
-	-  MAIS INFORMAÇÕES DO PROJETO
-	-  CONFIGURAÇÕES DE AMBIENTE 
-   -->
 </project>
